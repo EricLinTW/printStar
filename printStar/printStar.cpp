@@ -1,13 +1,55 @@
 ﻿// printStar.cpp : 此檔案包含 'main' 函式。程式會於該處開始執行及結束執行。
 //
 
-#include <iostream>
-#include <stdio.h>
-#include <string>
+#include "Header.h"
 
 //using namespace std ;
+void PrintArray(int nSize, int A[]);
 
-int printStar(int n) 
+void SelectionSort(int nSize, int A[])
+{
+	int i, j, k, t;
+	for (i = 0; i < nSize - 1; i++)
+	{
+		for (j = i + 1, k = i; j < nSize; j++)
+		{
+			if (A[j] < A[k])
+				k = j;
+		}
+		t = A[k];
+		A[k] = A[i];
+		A[i] = t;
+	}
+}
+
+void PrintArray(int nSize, int A[])
+{
+	//驗證
+	cout << endl;
+	for (int i = 0; i < nSize; i++)
+	{
+		cout << A[i] << " ";
+	}
+	cout << endl;
+}
+
+
+void ArrayALL()
+{
+	int A[] = { 6,1,3,2,8 };
+
+	int nSize = sizeof(A) / sizeof(A[0]);
+
+	cout << "Before: ";
+	PrintArray(nSize, A);
+
+	SelectionSort(nSize, A);
+
+	cout << "After : ";
+	PrintArray(nSize, A);
+}
+
+void printStar(int n) 
 {
 	for (int i = 1; i <= n; ++i)
 	{
@@ -22,14 +64,17 @@ int printStar(int n)
 		std::cout << std::endl;
 	}
 	system("pause");
-	return 0;
 }
-int main(int width)
+
+
+auto main() -> int
 {
-		printf("please input the width for triangel \a \n");
-		std::cout << "許蓋功" << std::endl;
-		scanf_s("%d", &width);
-		printStar(width);
+	int width;
+	printf("please input the width for triangel \a \n");
+	std::cout << "許蓋功" << std::endl;
+	scanf_s("%d", &width);
+	printStar(width);
+	ArrayALL();
 }
 
 // 執行程式: Ctrl + F5 或 [偵錯] > [啟動但不偵錯] 功能表
