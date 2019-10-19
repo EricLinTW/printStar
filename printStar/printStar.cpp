@@ -3,8 +3,6 @@
 
 #include "Header.h"
 
-//using namespace std ;
-void PrintArray(int nSize, int A[]);
 
 void SelectionSort(int nSize, int A[])
 {
@@ -54,14 +52,14 @@ void printStar(int n)
 	for (int i = 1; i <= n; ++i)
 	{
 		for (int j = 1; j < i ; ++j)
-			std::cout << "*";
-		std::cout << std::endl;
+			cout << "*";
+		cout << endl;
 	}
 	for (int i = 1; i <= n; ++i)
 	{
 		for (int j = 0; j <= n - i; ++j)
-			std::cout << "*";
-		std::cout << std::endl;
+			cout << "*";
+		cout << endl;
 	}
 	system("pause");
 }
@@ -71,7 +69,7 @@ auto main() -> int
 {
 	int width;
 	printf("please input the width for triangel \a \n");
-	std::cout << "許蓋功" << std::endl;
+	cout << "許蓋功" << endl;
 	scanf_s("%d", &width);
 	printStar(width);
 	ArrayALL();
