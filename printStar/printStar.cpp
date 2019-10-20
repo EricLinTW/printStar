@@ -65,7 +65,7 @@ void printStar(int n)
 }
 
 
-auto main() -> int
+auto main(int ageForStudent, double scoreForStudent,char levelForStudent) -> int
 {
 	int width;
 	printf("please input the width for triangel \a \n");
@@ -73,6 +73,26 @@ auto main() -> int
 	scanf_s("%d", &width);
 	printStar(width);
 	ArrayALL();
+	cout << 26 << "\n"; // 10進位
+	cout << 032 << "\n"; // 8進位
+	cout << 0x1A << "\n"; // 16進位
+	
+
+	cout << "\n年級\t得分\t等級";
+	cout << "\n" << ageForStudent
+		<< "\t" << scoreForStudent
+		<< "\t" << levelForStudent
+		<< "\n";
+
+	ageForStudent = 5;
+	scoreForStudent = 80.0;
+	levelForStudent = 'B';
+
+	cout << "\n年級\t得分\t等級";
+	cout << "\n" << ageForStudent
+		<< "\t" << scoreForStudent
+		<< "\t" << levelForStudent
+		<< "\n";
 }
 
 // 執行程式: Ctrl + F5 或 [偵錯] > [啟動但不偵錯] 功能表
