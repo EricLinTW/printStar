@@ -11,7 +11,7 @@ void SelectionSort(int nSize, int A[])
 	{
 		for (j = i + 1, k = i; j < nSize; j++)
 		{
-			if (A[j] < A[k])
+			if (A[j] > A[k])
 				k = j;
 		}
 		t = A[k];
